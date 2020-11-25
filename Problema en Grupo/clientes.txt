@@ -2,7 +2,7 @@ XXXXXXXXXXXXXXXXX
 {'nombre': 'Juan', 'saldo': 34, 'clave': '1234'}
 XXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXX
-{'nombre': 'Bryan', 'saldo': 200.0, 'clave': '1234'}
+{'nombre': 'Bryan', 'saldo': 300.0, 'clave': '1234'}
 XXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXX
 {'nombre': 'Nicole', 'saldo': 348, 'clave': '1234'}

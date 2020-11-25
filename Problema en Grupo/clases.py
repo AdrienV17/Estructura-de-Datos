@@ -24,7 +24,7 @@ class Cliente():
     
     def depositar(self,deposito):
         '''
-            Funcion que se encarga de realizar el deposito a la cuenta del cliente,
+            Metodo que se encarga de realizar el deposito a la cuenta del cliente,
             guardarlo en el arreglo y luego guardarlo en el archivo "clientes.txt"
             mediante la funcion "guardar_clientes(clientes)" que se encuentra en 
             "funciones.py"
@@ -46,7 +46,7 @@ class Cliente():
 
     def retirar(self,retiro):
         '''
-            Funcion que se encarga de realizar el retiro a la cuenta del cliente,
+            Metodo que se encarga de realizar el retiro a la cuenta del cliente,
             guardar el saldo en el arreglo y luego guardar todo en el archivo "clientes.txt"
             mediante la funcion "guardar_clientes(clientes)" que se encuentra en 
             "funciones.py"
@@ -68,16 +68,28 @@ class Cliente():
 
     def anadir_usuario(self):
         '''
-            Funcion solo hecha con fines de desarrollo para poder tener usuarios de prueba
+            Metodo solo hecha con fines de desarrollo para poder tener usuarios de prueba
 
-            Funcion para añadir un nuevo usuario a "clientes.txt".
+            Metodo para añadir un nuevo usuario a "clientes.txt".
         '''
         with open('./clientes.txt','a') as _clientes:
-            cliente = {'nombre':self.nombre,'saldo':self.saldo}
+            cliente = {'nombre':self.nombre,'saldo':self.saldo,'clave':self.clave}
             
             _clientes.write('XXXXXXXXXXXXXXXXX\n')
             _clientes.write(repr(cliente))
             _clientes.write('\n')
             _clientes.write('XXXXXXXXXXXXXXXXX\n')
+
+            clientes = cargar_clientes()
+        
+            clave = ''
+            for letra in str(self.clave):
+                clave += '*'
+            print('\n')
+            print('Cliente Añadido Exitosamente!!\n')
+            print('Datos')
+            print('\nCliente:',self.nombre)
+            print('Saldo: B/.',float(self.saldo))
+            print('Clave:', clave)
         
         return True

@@ -1,3 +1,4 @@
+import sys
 from ask import askString,askInt
 from clases import Cliente,clientes
 from funciones import buscar_cliente
@@ -14,6 +15,9 @@ from funciones import buscar_cliente
 
 opciones = ['Consulta','Depósito','Retiro','Salida']
 
+if len(sys.argv)>1:
+    if sys.argv[1] == 'desarrollo':
+        opciones.append('Añadir Usuario')
 
 if __name__ == "__main__":
     while True:
@@ -50,8 +54,7 @@ if __name__ == "__main__":
                     print('\nConsulta Finalizada!')
                 else:
                     print('\nError!! Clave Incorrecta\n')
-
-            
+  
 # Opción 2
 # Si el usuario presiona el 2 significa que desea depositar, para ello primero se 
 # verifica si existe dentro del arreglo y luego se solicita la cantidad que desea 
@@ -82,7 +85,8 @@ if __name__ == "__main__":
 # dentro del arreglo para ver si existe, una vez verificado debe mostrar 
 # el saldo actual y nombre del cliente y luego solicitar el monto a retirar. 
 # Aquí hay que validar que el monto a retirar sea menor de lo que tiene en 
-# el saldo actual, si excede esa cantidad el programa deberá enviar un mensaje de error.
+# el saldo actual, si excede esa cantidad el programa deberá enviar un mensaje 
+# de error.
 
         if opcion_elegida == 3:
             print('\n')
@@ -109,7 +113,6 @@ if __name__ == "__main__":
                 else:
                     print('\nError!! Clave Incorrecta\n')
 
-
 #  Opción 4
 # En ésta opción el usuario está decidiendo salir del programa.
 
@@ -122,7 +125,7 @@ if __name__ == "__main__":
 # Esta es una opcion que yo cree, puesto que no tenia usuarios para probar.
 # La opcion solamente crea un nuevo usuario con clave, saldo inicial y nombre.
         if opcion_elegida == 5:
-            nombre = input("Ingrese el nombre\n")
+            nombre = input("\nIngrese el nombre\n")
             
             saldo = askInt('Ingrese el Saldo Inicial')
             saldo = int(saldo)
